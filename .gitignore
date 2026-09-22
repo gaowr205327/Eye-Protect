@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# 打包产物（PyInstaller）
+build/
+dist/
+*.spec
+
+# 应用图标生成产物（非源码，可随时重建）
+assets/icon.ico
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# WorkBuddy / Claude
+.claude/
+.workbuddy/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
