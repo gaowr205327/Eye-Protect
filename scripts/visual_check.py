@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
-"""视觉验证脚本（开发用）：弹出设置窗口（三标签页）与两类提醒弹窗，截图到 assets/。
+"""视觉验证脚本（开发用）：弹出设置窗口（三标签页）与两类提醒弹窗，截图到 scripts/out/。
 用法: python scripts/visual_check.py
+
+输出目录已从 assets/ 挪到 scripts/out/：assets/ 只放随包分发的运行时资源，
+开发过程截图一律进 scripts/out/（该目录被 .gitignore 排除）。
 """
 import os
 import sys
@@ -14,7 +17,7 @@ import config
 from popup import ReminderPopup, W, H, MARGIN
 from settings_window import SettingsWindow
 
-OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
+OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 root = tk.Tk()
@@ -98,7 +101,6 @@ def shot_main():
         # root.winfo_id() 就是本 Tk 顶层窗口的 HWND，精确且不受其它窗口干扰。
         dst = os.path.join(OUT_DIR, name)
         try:
-            import ctypes
             hwnd = root.winfo_id()
             img = ImageGrab.grab(window=hwnd)
             if img.size == (w, h):

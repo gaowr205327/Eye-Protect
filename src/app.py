@@ -10,7 +10,6 @@ import os
 import queue
 import random
 import sys
-import time
 import tkinter as tk
 
 import config

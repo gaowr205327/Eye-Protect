@@ -1,0 +1,7 @@
+# 开发/自测依赖（普通使用与打包都不需要）
+# 安装：pip install -r requirements-dev.txt
+#
+# 说明：自测脚本（scripts/smoke_test.py、e2e_test.py、visual_check.py）
+# 依赖 tkinter / Pillow / pystray，这三个已在 requirements.txt 中。
+# 本文件只补充额外的静态检查工具。
+pyflakes>=3.2

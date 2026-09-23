@@ -116,9 +116,7 @@ def main():
     _enable_dpi_awareness()
 
     # 主端口：可绑定 → 成为唯一实例
-    if _acquire_single_instance(SINGLE_INSTANCE_PORT):
-        port = SINGLE_INSTANCE_PORT
-    else:
+    if not _acquire_single_instance(SINGLE_INSTANCE_PORT):
         # 主端口被占用：探测是否为真实实例
         if _is_real_instance(SINGLE_INSTANCE_PORT):
             _notify_existing(SINGLE_INSTANCE_PORT)  # 真实实例：请它打开窗口，本实例退出
@@ -142,7 +140,6 @@ def main():
             except Exception:
                 pass
             return
-        port = BACKUP_INSTANCE_PORT
 
     root = tk.Tk()
     app = EyeReminderApp(root)

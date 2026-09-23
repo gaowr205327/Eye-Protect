@@ -19,6 +19,14 @@ dist/
 # 应用图标生成产物（非源码，可随时重建）
 assets/icon.ico
 
+# 开发过程截图（visual_check / e2e_test 的输出）
+scripts/out/
+
+# 静态检查缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
 # IDE
 .idea/
 .vscode/

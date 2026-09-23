@@ -293,8 +293,6 @@ LABEL_H = 26      # 标签行高（放大后）
 
 
 def build_overview():
-    S = SF
-
     # ---- 第 1 行：木质卡片面板（大小两种） ----
     card_big = add_nails(add_grain(pixel_box(150, 90, r=5, border="wood",
                                              face="pap", band=2,

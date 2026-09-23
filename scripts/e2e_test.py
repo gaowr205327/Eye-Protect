@@ -41,8 +41,9 @@ results = {"rest": False, "checkin": False}
 def final_shot():
     from PIL import ImageGrab
     sw, sh = root.winfo_screenwidth(), root.winfo_screenheight()
-    shot = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        "..", "assets", "shot_e2e.png")
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
+    os.makedirs(out_dir, exist_ok=True)
+    shot = os.path.join(out_dir, "shot_e2e.png")
     ImageGrab.grab(bbox=(sw - 420, sh - 280, sw - 10, sh - 10)).save(shot)
     print("E2E: both popups OK, screenshot saved", flush=True)
     app._quit()

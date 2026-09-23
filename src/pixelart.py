@@ -169,7 +169,7 @@ def _box(W, H, rings, r=2, hi=None, lo=None, fhi=None, flo=None, key=None):
             put(img, x, nh - 2, PAL[lo or hi])
         for y in range(2, nh - 2):
             put(img, 1, y, PAL[hi])
-            put(img, w_ := nw - 2, y, PAL[lo or hi])
+            put(img, nw - 2, y, PAL[lo or hi])
     if fhi:                                 # 内胆首行提亮
         for x in range(ins + 1, nw - ins - 1):
             put(img, x, ins, PAL[fhi])
@@ -626,7 +626,6 @@ def divider(W, H):
         return _CACHE[key]
     nw, nh = _nat(W, H)
     img = Image.new("RGBA", (nw, nh), (0, 0, 0, 0))
-    d = ImageDraw.Draw(img)
     mid = nh // 2
     for x in range(8, nw - 8):
         put(img, x, mid, PAL["wood_dark"])
